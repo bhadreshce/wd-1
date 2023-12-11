@@ -1,0 +1,1 @@
+  newArr[i] = pop
