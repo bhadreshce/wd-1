@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        background-color: gray;
+      }
+
+      span {
+        display: inline-block;
+        height: 20px;
+        min-width: 30px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><input type="" id="inpt1" /></td>
+        <td><input type="text" id="inpt2" /></td>
+      </tr>
+      <tr>
+        <td>
+          <button id="plus" onclick="plus()">+</button>
+          <button id="minus" onclick="minus()">-</button>
+          <button id="multi" onclick="multi()">*</button>
+          <button id="div" onclick="div()">/</button>
+        </td>
+        <td><span class="value" id="total"></span></td>
+      </tr>
+    </table>
+    <script src="myscript.js"></script>
+  </body>
+</html>
