@@ -65,7 +65,7 @@
                 </div>
                 <div>
                     <input type="button" value="Ac" class="operator"  onclick="clearN()">
-                    <input type="button" value="DE" class="operator" onclick="del()" >
+                    <input type="button" value="DE" class="operator" onclick="removeData()" >
                     <input type="button" value="." class="operator" onclick="displayN('.')" >
                     <input type="button" value="/" class="operator" onclick="displayN('/')" >
                 </div>
@@ -96,6 +96,18 @@
         </div>
     </div>
    <script>
+
+    function removeData(){
+       let output = document.getElementById('inputbox')
+       let remo = output.value.split('')
+       console.log(remo);
+       remo.pop()
+       
+       output.value = remo.join('')
+
+       
+
+    }
         function displayN(val){
          let output = document.getElementById('inputbox')
          
