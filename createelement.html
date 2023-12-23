@@ -6,9 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="ele">
-      <h1>hii this element tag</h1>
-    </div>
-    <script src="./myscript.js"></script>
+    <div id="item"></div>
+    <script>
+      let h = document.createElement('h1')
+      h.innerText = 'hii this is head'
+      let item = document.getElementById('item')
+      item.appendChild(h)
+    </script>
   </body>
 </html>
