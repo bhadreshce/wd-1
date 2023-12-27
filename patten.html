@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa suscipit
+        fugit molestias ducimus repellendus enim veritatis, sed nostrum minus
+        aut assumenda libero deserunt natus! Facere, reiciendis quas? Odio, enim
+        similique?.
+      </p>
+    </div>
+
+    <button onclick="printdata()">Print above code</button>
+
+    <script>
+      function printdata() {
+        let body = document.getElementById('main').innerHTML
+        let origanalhtml = document.body.innerHTML
+        document.body.innerHTML = body
+        window.print()
+        document.body.innerHTML = origanalhtml
+      }
+    </script>
+  </body>
+</html>
