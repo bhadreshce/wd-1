@@ -41,27 +41,6 @@
     <script>
       let item = []
       function addItem() {
-        let addData = document.getElementById('input').value
-        item.push(addData)
-        str = ''
-        for (let i = 0; i < item.length; i++) {
-          str +=
-            '<h5>' +
-            item[i] +
-            '</h5><span style="color:red; border:2px solid red" onclick="deleteData()">Delete</span>'
-        }
-        console.log(str)
-        function deleteData() {
-          alert('hii')
-        }
-        document.getElementById('data').innerHTML = str
-        document.getElementById('input').value = ''
-        // let hfive = document.createElement('h5')
-        // let uppr = addData.toUpperCase()
-        // hfive.innerHTML = uppr
-        // document.getElementById('data').append(hfive)
-        // document.getElementById('input').value = ''
-      }
     </script>
   </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //for in loop is use in object
+      //   let std = { name: 'monika', age: 20, marks: 60 }
+      //   for (let s in std) {
+      //     console.log(s, std[s])
+      //   }
+      let std = [
+        { name: 'monika', age: 20, marks: 60 },
+        { name: 'avni', age: 20, marks: 70 },
+        { name: 'mirali', age: 20, marks: 80 },
+        { name: 'hemali', age: 20, marks: 90 },
+      ]
+
+      //   console.log(std)
+      //for array
+      std.forEach((value, index) => {
+        //for object
+        for (let v in value) {
+          console.log(value[v])
+        }
+      })
+    </script>
+  </body>
+</html>
