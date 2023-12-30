@@ -9,14 +9,17 @@
     <button onclick="storedata()">Add Username</button>
 
     <script>
-      //   function storedata() {
-      //     document.cookie = 'color=red'
-      //     location.reload()
-      //   }
+      function storedata() {
+        document.cookie = 'color=red'
+        location.reload()
+      }
 
-      //   let color = document.cookie
-      //   let c = color.split('=')
-      //   document.body.style.backgroundColor = c[1]
+      let color = document.cookie
+
+      console.log(color)
+      let c = color.split('=')
+      console.log(c)
+      document.body.style.backgroundColor = c[1]
       //   document.cookie = 'username=bhadresh'
       //   document.cookie = 'age=23'
 
