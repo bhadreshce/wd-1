@@ -43,16 +43,66 @@
 
       // 02_filter : for remove value index value from array using condition
       //   var std = [
-      //     { name: 'monika', mark: 30, age: 20 },
-      //     { name: 'hemali', mark: 37, age: 21 },
-      //     { name: 'mirali', mark: 40, age: 22 },
-      //     { name: 'avni', mark: 50, age: 22 },
+      // { name: 'monika', mark: 30, age: 20 },
+      // { name: 'hemali', mark: 37, age: 21 },
+      // { name: 'mirali', mark: 40, age: 22 },
+      // { name: 'avni', mark: 50, age: 22 },
       //   ]
 
-      //   let newStd = std.filter((result, index) => {
-      //     return result.mark >= 38
-      //   })
+      //   let newStd =   n
       //   console.log(newStd)
+
+      // Example 1
+      // let std = [
+      //   { name: 'monika', mark: 30, age: 20 },
+      //   { name: 'hemali', mark: 37, age: 21 },
+      //   { name: 'mirali', mark: 40, age: 22 },
+      //   { name: 'avni', mark: 50, age: 22 },
+      // ]
+
+      // let newStd = std.map((result, index) => {
+      //   if (result.name == 'mirali') {
+      //     return {
+      //       name: result.name,
+      //       mark: result.mark + 10,
+
+      //       surname: 'moradiya',
+      //     }
+      //   } else {
+      //     return result
+      //   }
+      // })
+
+      // let std = [
+      //   { name: 'monika', mark: 30, age: 20 },
+      //   { name: 'hemali', mark: 37, age: 21 },
+      //   { name: 'mirali', mark: 40, age: 19 },
+      //   { name: 'avni', mark: 50, age: 22 },
+      // ]
+
+      // let newStd = std.filter((result, index) => {
+      //   return result.age >= 20 && result.mark >= 33
+      // })
+
+      // console.log(newStd)
+
+      // Example 2
+      // let std = [
+      //   { name: 'monika', mark: 30, age: 20 },
+      //   { name: 'hemali', mark: 37, age: 21 },
+      //   { name: 'mirali', mark: 40, age: 19 },
+      //   { name: 'avni', mark: 50, age: 22 },
+      // ]
+      // add mark 10 and remove mark value below 45
+
+      // let newStd = std.map((result, index) => {
+      //   return { name: result.name, mark: result.mark + 10, age: result.age }
+      // })
+
+      // let newStd2 = newStd.filter((result, index) => {
+      //   return result.mark > 45
+      // })
+      // console.log(newStd2)
     </script>
   </body>
 </html>
