@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        height: 300px;
+        width: 250px;
+        background-color: aqua;
+        margin: auto;
+      }
+
+      .box {
+        margin: auto;
+        padding-top: 10px;
+        width: 100%;
+        text-align: center;
+      }
+      .box2 {
+        margin: auto;
+        width: 100%;
+        height: auto;
+        background-color: cadetblue;
+        text-align: center;
+      }
+      input {
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <div class="box">
+        <input type="text" id="input" />
+        <button onclick="addItem()">Add</button>
+      </div>
+      <div class="box2" id="data"></div>
+    </div>
+    <script>
+      let item = []
+
+      function addItem() {
+        let inpt = document.getElementById('input').value
+        item.push(inpt)
+        displayElement(item)
+        document.getElementById('input').value = ''
+      }
+
+      function displayElement(data) {
+        document.getElementById('data').innerHTML = ''
+        data.forEach((value, index) => {
+          let itData = document.createElement('h1')
+          itData.innerText = value
+          let deleteData = document.createElement('button')
+          deleteData.innerText = 'Delete'
+          deleteData.addEventListener('click', () => {
+            deteteD(index)
+          })
+
+          document.getElementById('data').appendChild(itData)
+          document.getElementById('data').appendChild(deleteData)
+        })
+      }
+
+      function deteteD(i) {
+        item.splice(i, 1)
+
+        displayElement(item)
+      }
+    </script>
+  </body>
+</html>
