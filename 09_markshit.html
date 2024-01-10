@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
+"
+    />
+  </head>
+  <body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Maths</th>
+          <th scope="col">Science</th>
+          <th scope="col">Total</th>
+          <th scope="col">Per(%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mirali</td>
+          <td><input type="number" id="mts_mirali" onchange="cal_m()" /></td>
+          <td><input type="number" id="sci_mirali" onchange="cal_m()" /></td>
+          <td><b id="total_mirali"></b></td>
+          <td><b id="per"></b></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Nency</td>
+          <td><input type="number" id="mts_nency" onchange="cal_n()" /></td>
+          <td><input type="number" id="sci_nency" onchange="cal_n()" /></td>
+          <td><b id="total_nency"></b></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js
+"></script>
+    <script>
+      function cal_m() {
+        let mtsMirali = document.getElementById('mts_mirali').value
+        let sciMirali = document.getElementById('sci_mirali').value
+        let validmts = markValidation(mtsMirali)
+        let validsci = markValidation(sciMirali)
+        if (!validmts) {
+          alert('please enter valid mark')
+          document.getElementById('mts_mirali').value = null
+          return false
+        }
+
+        if (!validsci) {
+          alert('please enter valid mark')
+          document.getElementById('sci_mirali').value = null
+          return false
+        }
+        let total = Number(mtsMirali) + Number(sciMirali)
+        document.getElementById('total_mirali').innerText = total
+        document.getElementById('per').innerText = (total / 200) * 100
+      }
+
+      function markValidation(mark) {
+        return Number(mark) <= 100
+      }
+    </script>
+  </body>
+</html>
