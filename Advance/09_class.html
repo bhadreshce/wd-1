@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class -class is  blueprint of object
+
+      class Sum {
+        constructor(a, b) {
+          this.first = a
+          this.second = b
+        }
+
+        add(a, b) {
+          console.log(this.first + this.second)
+          console.log(a + b)
+        }
+      }
+
+      const s = new Sum(2, 3)
+      s.add(2, 2)
+      var m = new Sum(3, 4)
+      m.add(2, 2)
+      //capital , small
+      // no number
+      // special symbol no
+      // underscore support
+      // $ support
+    </script>
+  </body>
+</html>
