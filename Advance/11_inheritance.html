@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multilevel inheritance</title>
+  </head>
+  <body>
+    <script>
+      class Sum {
+        constructor(a, b) {
+          this.first = a
+          this.second = b
+        }
+      }
+
+      class Multi extends Sum {
+       constructor(a, b, c, d) {
+          super(c, d)
+          this.num1 = a
+          this.num2 = b
+        }
+ 
+        mul() {
+          console.log(this.num1 * this.num2)
+        }
+      }
+
+      class Div extends Multi {
+        constructor(a, b, c, d, e, f) {
+         
+          this.n1 = e
+          this.n2 = f
+        }
+
+        divison() {
+          console.log(this.n1 / this.n2)
+        }
+      }
+
+      const obj = new Div(10, 11, 12, 13, 14, 15)
+      obj.divison()
+    </script>
+  </body>
+</html>

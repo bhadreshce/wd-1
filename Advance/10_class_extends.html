@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // inheritance - use one class inside onther  
+      class Sum {
+        constructor(a, b) {
+          this.first = a
+          this.second = b
+        }
+
+        add() {
+          console.log(this.first + this.second)
+        }
+      }
+
+      class Multi extends Sum {
+        constructor(a, b, c, d) {
+          super(c, d)
+          this.num1 = a
+          this.num2 = b
+        }
+
+        mul() {
+          console.log(this.num1 * this.num2)
+        }
+      }
+
+
+      
+
+      //   var obj = new Sum(10, 20)
+      //   obj.add()
+      const obj = new Multi(12, 22, 10, 12)
+      obj.mul()
+      obj.add()
+    </script>
+  </body>
+</html>
