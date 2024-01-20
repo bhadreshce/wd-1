@@ -12,23 +12,28 @@
           this.first = a
           this.second = b
         }
+
+        add() {
+          console.log(this.first + this.second)
+        }
       }
 
       class Multi extends Sum {
-       constructor(a, b, c, d) {
+        constructor(a, b, c, d) {
           super(c, d)
           this.num1 = a
           this.num2 = b
         }
- 
+
         mul() {
+          this.add()
           console.log(this.num1 * this.num2)
         }
       }
 
       class Div extends Multi {
         constructor(a, b, c, d, e, f) {
-         
+          super(a, b, c, d)
           this.n1 = e
           this.n2 = f
         }
@@ -38,8 +43,9 @@
         }
       }
 
-      const obj = new Div(10, 11, 12, 13, 14, 15)
+      const obj = new Div(2, 2, 2, 2, 2, 2)
       obj.divison()
+      obj.mul()
     </script>
   </body>
 </html>
