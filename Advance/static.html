@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(typeof String(1234))
+
+      //   let urlData = decodeURI(
+      //     'https://www.google.com/search?q=new+fiture+fli%5Bpkart&oq=new+fiture+fli%5Bpkart&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIKCAEQABgIGA0YHjINCAIQABiGAxiABBiKBTIGCAMQRRhA0gEKMTcyMDFqMGoxNagCALACAA&sourceid=chrome&ie=UTF-8',
+      //   )
+      // static: using static keyword we can write method without creating class
+      //   console.log(urlData)
+      class A {
+        constructor(a) {
+          this.name = a
+        }
+
+        static displayA(name) {
+          console.log(name + ' this is A')
+        }
+      }
+
+      //   const obj = new A('bhadresh')
+      A.displayA('bhadresh')
+    </script>
+  </body>
+</html>
