@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class A {
+        add() {
+          console.log('this is first method')
+        }
+      }
+
+      class B extends A {
+        add() {
+          super.add()
+          //   console.log('this is second method')
+        }
+      }
+
+      const obj = new B()
+      //   const objA = new A()
+      obj.add()
+      //   objA.add()
+    </script>
+  </body>
+</html>
