@@ -4,8 +4,7 @@
 // let d: boolean = false
 
 // const car: { color: string, speed: number } = { color:'red',speed:200 }
-//  console.log(d);
-
+     dwddwdwqdd
 // abstract class have abstract method that can be extends in child class 
 abstract class Sum {
     num1: Number
