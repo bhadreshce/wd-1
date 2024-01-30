@@ -12,3 +12,8 @@
 // let data = { name: 'bhadresh', age: 25 }
 // const { age: f, name: b } = data
 // console.log(f)
+
+// var color = ['red', 'green', 'black']
+
+// const [, c2] = color
+// console.log(c2)
