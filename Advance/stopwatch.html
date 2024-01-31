@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        color: black;
+        height: 100px;
+        width: 300px;
+        border: 2px solid black;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background-color: gray;
+        font-weight: bold;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1 id="timer">00:00:00</h1>
+    </div>
+    <div class="btn">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="stopTimer()">Stop</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+    <script>
+      let [hours, minute, second] = [0, 0, 0]
+      let timerId
+      function startTimer() {
+        timerId = setInterval(() => {
+          second = second + 1
+          if (second >= 60) {
+            second = 0
+            minute = minute + 1
+            if (minute >= 60) {
+              minute = 0
+              hours = hours + 1
+            }
+          }
+          h = hours < 10 ? '0' + hours : hours
+          m = minute < 10 ? '0' + minute : minute
+          s = second < 10 ? '0' + second : second
+
+          //   if (second < 10) {
+          //     s = '0' + second
+          //   } else {
+          //     s = second
+          //   }
+          document.getElementById('timer').innerText = h + ':' + m + ':' + s
+        }, 1000)
+      }
+
+      function stopTimer() {
+        clearInterval(timerId)
+      }
+
+      function resetTimer() {
+        ;[hours, minute, second] = [0, 0, 0]
+        clearInterval(timerId)
+        document.getElementById('timer').innerText = '00:00:00'
+      }
+    </script>
+  </body>
+</html>
