@@ -12,6 +12,8 @@
   </style>
   <body>
     <input type="text" />
+    <input type="radio" name="gender" id="" value="male" />
+    <input type="radio" name="gender" id="" value="female" />
     <h1 id="data"></h1>
     <button>Click me</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -64,9 +66,9 @@
         //   $('#data').text(e.target.value)
         // })
         // form event
-        // $('input').change((e) => {
-        //   $('#data').text(e.target.value)
-        // })
+        $('input[type=radio][name=gender]').change((e) => {
+          $('#data').text(e.target.value)
+        })
         //
         // focus
         // $('input').focus((e) => {

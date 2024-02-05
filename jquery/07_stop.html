@@ -17,6 +17,7 @@
     <button id="down">Slide Down</button>
     <button id="up">Slide Up</button>
     <button id="toggle">Slide Toggle</button>
+    <button id="stop">Stop Slide</button>
     <div class="box">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus modi
       sunt voluptas in cum quo. Adipisci vitae incidunt omnis, laudantium dolore
@@ -31,11 +32,16 @@
         //   $('.box').slideDown(3000).css('font-size', '34px')
         // })
         // $('#up').click(() => {
-        //   $('.box').slideUp(3000).css('font-size', '34px')
+        //   $('.box').slideUp(5000).css('font-size', '34px')
         // })
-        // $('#toggle').click(() => {
-        //   $('.box').slideToggle(3000).css('font-size', '34px')
-        // })
+        $('#toggle').click(() => {
+          $('.box').slideToggle(5000).css('font-size', '34px')
+        })
+
+        // for stop slide ,fade ,hide ,show, animate effects
+        $('#stop').click(() => {
+          $('.box').stop()
+        })
       })
     </script>
   </body>

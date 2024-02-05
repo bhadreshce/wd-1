@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        height: 400px;
+        width: 400px;
+        background-color: rgb(135, 93, 93);
+        position: relative;
+        /* display: none; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque velit alias dicta quod eveniet, consequatur officia officiis quas, optio molestiae consequuntur sed a quisquam, ipsa tempora consectetur aliquid quasi minus.</div>
+    <button id="btn">Animate</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $('#btn').click(() => {
+          $('.box').animate({ left: '250px', height: '500px'  },{
+     easing: 'swing',
+     duration: 2000,
+     complete: function(){
+         $('.box').animate({ fontSize:'40px' },{ easing: 'swing',
+     duration: 2000, })
+    }
+});
+        })
+    })
+    </script>
+
+</html>

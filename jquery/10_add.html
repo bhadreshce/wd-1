@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>hii</li>
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        // data store at last of selected element
+        // $('ul').append('<li>hii</li>')
+        // $('ul').append('<li>hello</li>')
+
+        // data store at first of selected element
+        $('ul').prepend('<li>i am first</li>')
+
+        // after - after selected element
+        $('ul').after('<span>i am outer below element</spna>')
+
+        // before - before selected element
+        $('ul').before('<span>i am outer upper element</spna>')
+      })
+    </script>
+  </body>
+</html>
