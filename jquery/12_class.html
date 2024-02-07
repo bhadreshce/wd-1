@@ -25,23 +25,38 @@
   </head>
 
   <body>
-    <div class="box"></div>
-    <button></button>
+    <div class="box sun"></div>
+    <button id="SunMoon">Moon</button>
     <!-- <button id="sun">Sun</button>
     <button id="moon">Moon</button> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       $(document).ready(() => {
-        // $('#sun').click(() => {
-        //   $('.box').removeClass('moon')
-        //   $('.box').addClass('sun')
-        // })
-        // $('#moon').click(() => {
-        //   $('.box').removeClass('sun')
-        //   $('.box').addClass('moon')
-        // })
+        //   $('#sun').click(() => {
+        //     $('.box').removeClass('moon')
+        //     $('.box').addClass('sun')
+        //   })
+        //   $('#moon').click(() => {
+        //     $('.box').removeClass('sun')
+        //     $('.box').addClass('moon')
+        //   })
+        //
+        //
+        //
 
-        
+        $('#SunMoon').click(() => {
+          let $class = $('.box').hasClass('sun')
+
+          if ($class) {
+            $('#SunMoon').text('Sun')
+            $('.box').removeClass('sun')
+            $('.box').addClass('moon')
+          } else {
+            $('#SunMoon').text('Moon')
+            $('.box').addClass('sun')
+            $('.box').removeClass('moon')
+          }
+        })
       })
     </script>
   </body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolor
+      ratione molestiae nulla numquam, voluptas quod laudantium tempora ad,
+      distinctio maiores dicta et culpa aperiam animi amet, mollitia magnam
+      esse.
+    </p>
+
+    <button id="css">Css Apply</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $('#css').click(() => {
+          //   $('p').css('color', 'red')
+          $('p').css({
+            backgroundColor: 'red',
+            color: 'white',
+            fontSize: '30px',
+          })
+        })
+      })
+    </script>
+  </body>
+</html>

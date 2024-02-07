@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #a {
+        height: 400px;
+        width: 700px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #b {
+        height: 300px;
+        width: 500px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #c {
+        height: 100px;
+        width: 100px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="a">
+      <span>a</span>
+      <div id="b">
+        <span>b</span>
+        <div id="c">
+          <span>c</span>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="box">
+      <span class="b">1</span>
+      <span>2</span>
+      <div class="c">
+        <span>3</span>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        // Ancestors
+        // $('#c').parent().css({ border: '2px solid red' })
+        // $('#c').parents().css({ border: '2px solid red' })
+        // $('#c').parentsUntil('#a').css({ border: '2px solid red' })
+        //Descendants
+        // $('#a').children().css({ border: '2px solid red' })
+        // $('#a').find('div').css({ border: '2px solid red' })
+        //
+        // $('.b').siblings().css({ border: '2px solid red' })
+        // $('.b').next().css({ border: '2px solid red' })
+        // $('.c').prev().css({ border: '2px solid red' })
+        // $('.b').nextAll().css({ border: '2px solid red' })
+      })
+    </script>
+  </body>
+</html>
