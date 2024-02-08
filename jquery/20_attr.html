@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="password" id="inpt" />
+    <button>Show</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $('button').click(() => {
+          var type = $('input').prop('type')
+          console.log(type)
+          if (type == 'password') {
+            $('button').text('Hide')
+            $('input').prop('type', 'text')
+          } else {
+            $('button').text('Show')
+            $('input').attr('type', 'password')
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

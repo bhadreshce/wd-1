@@ -19,7 +19,7 @@
     </div>
     <br />
 
-    <div style="border: 1px solid black;">
+    <div class="intro" style="border: 1px solid black;">
       <p>A paragraph in another div.</p>
       <p>Another paragraph in another div.</p>
     </div>
@@ -29,7 +29,12 @@
       $(document).ready(() => {
         // $('div').last().css('background-color', 'yellow')
         // $('div').first().css('background-color', 'yellow')
-        $('div').eq(2)
+        // start from 0 index
+        // $('div').eq(2).css('background-color', 'yellow')
+        // all class of .intro
+        // $('div').filter('.intro').css('background-color', 'red')
+        // not allowed selected class
+        // $('div').not('.intro').css('background-color', 'red')
       })
     </script>
   </body>
