@@ -12,7 +12,12 @@ function Slider() {
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={logo} height={'300px'} class="d-block w-100 chart" alt="..." />
+            <img
+              src={logo}
+              height={'300px'}
+              class="d-block w-100 chart"
+              alt="..."
+            />
           </div>
           <div class="carousel-item">
             <img src={logo1} height={'300px'} class="d-block w-100" alt="..." />

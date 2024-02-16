@@ -1,15 +1,19 @@
 import './App.css';
 
 import Head from './Head'
-import Slider from './Slider';
-import Card from './Card';
+import { Routes, Route } from 'react-router-dom'
+import Home from './Home';
+import Contact from './Contact';
 function App() {
-  let a = 123
+
   return (
     <>
       <Head />
-      <Slider />
-      <Card />
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
     </>
   );
 }

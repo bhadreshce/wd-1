@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import './Card.css'
 
 const Head = () => {
   return (
@@ -22,14 +24,14 @@ const Head = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <NavLink activeClassName="active" to={'/'}>
                 Home <span className="sr-only">(current)</span>
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
+              <NavLink activeClassName="active" to={'/contact'}>
+                Contact
+              </NavLink>
             </li>
             <li className="nav-item dropdown">
               <a
