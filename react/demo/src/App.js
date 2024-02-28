@@ -8,6 +8,8 @@ import Contact from './Contact';
 import Test from './Test'
 import { Demo } from './Demo'
 import  Useref from './Useref'
+import Todo  from './Todo'
+
 const name = 'Myweb'
 const email = "bhadresh@gmail.com"
 function App() {
@@ -19,9 +21,10 @@ const inc = () =>{
 
   return (
     <>
+    <Todo />
     {/*<h1>{count}</h1>*/}
       {/*<Head />*/}
-       <Useref />
+       {/*<Useref />*/}
       {/*<Demo incment={inc}  webname={name} myemail={email}/>*/}
       {/*<Routes>
         <Route path='/' element={<Home />} />
