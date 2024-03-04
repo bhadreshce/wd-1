@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Contact = () => {
+const Contact = (props) => {
     return <>
-        <h1>hii thyis is contact page</h1>
+        {/* <h1>{props.myname}</h1> */}
+
+
+
     </>
 }
 
