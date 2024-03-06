@@ -7,9 +7,7 @@ const ChildA = () => {
         <div>
             <Acomponent.Provider value={hook}>
                 <ChildB />
-                hook
-                hook
-                hook
+              
             </Acomponent.Provider>
             <h1>hii i am A TO C</h1>
 
