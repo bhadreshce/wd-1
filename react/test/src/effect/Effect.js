@@ -11,12 +11,12 @@ const Effect = () => {
         }).then((res) => {
             console.log(res);
             setProduct(res)
-
         })
 
     }, [])
     return (
         <div className='container d-flex flex-wrap'>
+
             {product.map((prd) => {
                 return (
                     <>
