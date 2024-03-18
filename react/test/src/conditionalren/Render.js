@@ -16,8 +16,8 @@ const Render = () => {
     return (
         <>
             {/* example 1 */}
-            {/* {value == 'sun' && (<img src={sun} alt="" />)} */}
-            {/* {value == 'moon' && (<img src={moon} alt="" />)} */}
+            {/* {value == 'sun' && (<img src={sun} alt="" />)}
+            {value == 'moon' && (<img src={moon} alt="" />)} */}
             {/* {value == 'sun' ? (<div className='box'><img src={sun} /></div>) : (<div className='box'><img src={moon} /></div>)} */}
 
             {/* example 2 */}

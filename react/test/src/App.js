@@ -5,6 +5,8 @@ import Effect from './effect/Effect';
 import Api from './effect/Api';
 import ToDo from './effect/ToDo';
 import Render from './conditionalren/Render';
+import Demo from './class/Demo';
+import Lifecycle from './class/Lifecycle';
 function App() {
   return (
     <div className="App">
@@ -12,7 +14,9 @@ function App() {
       {/* <Effect/> */}
       {/* <Api /> */}
       {/* <ToDo/> */}
-      <Render />
+      {/* <Render /> */}
+      {/* <Demo /> */}
+    <Lifecycle />
     </div>
   );
 }
