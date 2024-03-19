@@ -7,6 +7,9 @@ import ToDo from './effect/ToDo';
 import Render from './conditionalren/Render';
 import Demo from './class/Demo';
 import Lifecycle from './class/Lifecycle';
+import Todo from './class/Todo';
+
+const website = 'MYWeb'
 function App() {
   return (
     <div className="App">
@@ -16,7 +19,8 @@ function App() {
       {/* <ToDo/> */}
       {/* <Render /> */}
       {/* <Demo /> */}
-    <Lifecycle />
+      {/* <Lifecycle site={website} /> */}
+      <Todo/>
     </div>
   );
 }

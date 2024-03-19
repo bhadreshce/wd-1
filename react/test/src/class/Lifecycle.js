@@ -7,36 +7,45 @@ export default class Lifecycle extends Component {
     this.state = { count: 0 }
   }
 
-  componentDidMount() {
-    console.log('componentDidMount');
-  }
+  // static getDerivedStateFromProps(props, state) {
+  //   return { count: props.site }
+  // }
 
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
+  // getSnapshotBeforeUpdate(prevProps, prevState) {
+  //   console.log(prevState);
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate');
-    if (this.state.count < 10) {
-      return true
-    } else {
-      return false
-    }
-  }
+  // }
 
-  componentWillUpdate(newProps, newState) {
-    console.log('componentWillUpdate');
+  // componentDidMount() {
+  //   console.log('componentDidMount');
+  // }
 
-    if (newState.count > 5) {
-      document.body.style.backgroundColor = 'red'
+  // componentWillUnmount() {
+  //   console.log('componentWillUnmount');
+  // }
 
-    }
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('shouldComponentUpdate');
+  //   if (this.state.count < 10) {
+  //     return true
+  //   } else {
+  //     return false
+  //   }
+  // }
+
+  // componentWillUpdate(newProps, newState) {
+  //   console.log('componentWillUpdate');
+
+  //   if (newState.count > 5) {
+  //     document.body.style.backgroundColor = 'red'
+
+  //   }
+  // }
 
   componentDidUpdate(oldProps, oldState) {
-    console.log('componentDidUpdate');
+    // console.log('componentDidUpdate');
 
-    console.log(oldState);
+    // console.log(oldState);
 
   }
 
