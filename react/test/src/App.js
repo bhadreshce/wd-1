@@ -19,8 +19,8 @@ function App() {
       {/* <ToDo/> */}
       {/* <Render /> */}
       {/* <Demo /> */}
-      {/* <Lifecycle site={website} /> */}
-      <Todo/>
+      <Lifecycle site={website} />
+      {/* <Todo/> */}
     </div>
   );
 }

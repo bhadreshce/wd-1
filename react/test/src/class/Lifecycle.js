@@ -7,40 +7,40 @@ export default class Lifecycle extends Component {
     this.state = { count: 0 }
   }
 
-  // static getDerivedStateFromProps(props, state) {
-  //   return { count: props.site }
-  // }
+  static getDerivedStateFromProps(props, state) {
+    return { count: props.site }
+  }
 
-  // getSnapshotBeforeUpdate(prevProps, prevState) {
-  //   console.log(prevState);
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log(prevState);
 
-  // }
+  }
 
-  // componentDidMount() {
-  //   console.log('componentDidMount');
-  // }
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
 
-  // componentWillUnmount() {
-  //   console.log('componentWillUnmount');
-  // }
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log('shouldComponentUpdate');
-  //   if (this.state.count < 10) {
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  // }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate');
+    if (this.state.count < 10) {
+      return true
+    } else {
+      return false
+    }
+  }
 
-  // componentWillUpdate(newProps, newState) {
-  //   console.log('componentWillUpdate');
+  componentWillUpdate(newProps, newState) {
+    console.log('componentWillUpdate');
 
-  //   if (newState.count > 5) {
-  //     document.body.style.backgroundColor = 'red'
+    if (newState.count > 5) {
+      document.body.style.backgroundColor = 'red'
 
-  //   }
-  // }
+    }
+  }
 
   componentDidUpdate(oldProps, oldState) {
     // console.log('componentDidUpdate');
