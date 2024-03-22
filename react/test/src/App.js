@@ -8,6 +8,7 @@ import Render from './conditionalren/Render';
 import Demo from './class/Demo';
 import Lifecycle from './class/Lifecycle';
 import Todo from './class/Todo';
+import Crud from './class/Crud';
 
 const website = 'MYWeb'
 function App() {
@@ -19,7 +20,8 @@ function App() {
       {/* <ToDo/> */}
       {/* <Render /> */}
       {/* <Demo /> */}
-      <Lifecycle site={website} />
+      {/* <Lifecycle site={website} /> */}
+       <Crud/>
       {/* <Todo/> */}
     </div>
   );
