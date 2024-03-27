@@ -9,8 +9,10 @@ import Demo from './class/Demo';
 import Lifecycle from './class/Lifecycle';
 import Todo from './class/Todo';
 import Crud from './class/Crud';
+import PropsType from './PropsType';
 
 const website = 'MYWeb'
+const std = { name:67, age:25 }
 function App() {
   return (
     <div className="App">
@@ -21,7 +23,8 @@ function App() {
       {/* <Render /> */}
       {/* <Demo /> */}
       {/* <Lifecycle site={website} /> */}
-       <Crud/>
+      <PropsType site={website} list={std} />
+       {/* <Crud/> */}
       {/* <Todo/> */}
     </div>
   );

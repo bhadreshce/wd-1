@@ -14,8 +14,7 @@ const Calcu = () => {
     const displayN = (val) => {
         document.getElementById('inputbox').value += val
     }
-    98
-    .0
+  
 
     const cal = () => {
         let total = eval(document.getElementById('inputbox').value)
