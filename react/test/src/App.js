@@ -11,9 +11,11 @@ import Todo from './class/Todo';
 import Crud from './class/Crud';
 import PropsType from './PropsType';
 import Memo from './calcu/Memo';
+import Forword from './forword/Forword';
+import Load from './lazy/Load';
 
 const website = 'MYWeb'
-const std = { name:67, age:25 }
+const std = { name: 67, age: 25 }
 function App() {
   return (
     <div className="App">
@@ -25,9 +27,11 @@ function App() {
       {/* <Demo /> */}
       {/* <Lifecycle site={website} /> */}
       {/* <PropsType site={website} list={std} /> */}
-       {/* <Crud/> */}
+      {/* <Crud/> */}
       {/* <Todo/> */}
-      <Memo/>
+      {/* <Memo /> */}
+      {/* <Forword /> */}
+      <Load />
     </div>
   );
 }

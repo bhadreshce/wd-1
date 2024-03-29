@@ -22,6 +22,3 @@ const Memo = () => {
 export default Memo
 
 
-myFUnction([1, 2, 2, 3])
-
-output: { 1:1,2:2,3:1 }
