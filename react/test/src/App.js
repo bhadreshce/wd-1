@@ -13,6 +13,7 @@ import PropsType from './PropsType';
 import Memo from './calcu/Memo';
 import Forword from './forword/Forword';
 import Load from './lazy/Load';
+import A from './callback/A';
 
 const website = 'MYWeb'
 const std = { name: 67, age: 25 }
@@ -31,7 +32,8 @@ function App() {
       {/* <Todo/> */}
       {/* <Memo /> */}
       {/* <Forword /> */}
-      <Load />
+      {/* <Load /> */}
+    <A/>
     </div>
   );
 }
