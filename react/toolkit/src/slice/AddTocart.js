@@ -6,7 +6,7 @@ const cart = createSlice({
     reducers: {
         addTo(state, action) { 
             console.log(action.payload);
-            return state + action.payload;
+            return state + parseInt(action.payload);
         }
     }
 });

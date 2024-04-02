@@ -13,7 +13,7 @@ function App() {
       <h1>Hair oil</h1>
       <input type="number" id='cartitem' />
       <button onClick={() => {
-        addTo(document.getElementById('cartitem').value)
+        dispatch(addTo(document.getElementById('cartitem').value))
       }}>Add To cart</button>
     </div>
   );
