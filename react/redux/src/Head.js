@@ -1,12 +1,12 @@
 import React from 'react'
-import { UseSelector, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 const Head = () => {
 
     const state = useSelector((result) => { 
              return result.IncDec.count
     })
   return (
-      <div>Head { state}</div>
+      <div>Head {state}</div>
   )
 }
 
