@@ -1,28 +1,25 @@
 {
   "user": [
     {
-      "id": "5dd5",
-      "name": "",
-      "email": "",
-      "password": ""
+      "id": "2948",
+      "name": "bhadresh b",
+      "email": "bhadreshce17@gmail.com",
+      "password": "1221221",
+      "isadmin": false
     },
     {
-      "id": "f1ff",
-      "name": "",
-      "email": "",
-      "password": ""
+      "id": "654f",
+      "name": "bhadresh b",
+      "email": "bhadreshce17@gmail.com",
+      "password": "aqsasa",
+      "isadmin": false
     },
     {
-      "id": "cc64",
-      "name": "",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "e5c0",
-      "name": "",
-      "email": "",
-      "password": ""
+      "id": "334f",
+      "name": "bhadresh b",
+      "email": "bhadreshce17@gmail.com",
+      "password": "aqsasa",
+      "isadmin": true
     }
   ]
 }

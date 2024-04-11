@@ -1,31 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './pages/Header';
-import Footer from './pages/Footer';
-import LoginRegister from './pages/LoginRegister';
-import Register from './pages/Register';
+import Header from './user/Header';
+import Footer from './user/Footer';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
+import Home from './user/Home';
+import Admin from './admin/Admin';
+import Shop from './pages/Shop';
+import LoginRegister from './pages/LoginRegister';
 function App() {
   return (
     <>
-     
-     
-      
-        
       <BrowserRouter>
-        
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/reg" element={<Register/>}>
-              <Route path="login" element={<LoginRegister/>}></Route>
+          <Route path='/admin' element={<Admin />}>
+
           </Route>
+          <Route path='/' element={<Home />}>
+            {/* change on change outlet */}
+            <Route path='/' element={<Shop />}></Route>
+             <Route path='/login' element={<LoginRegister />}></Route>
             
-      </Routes>
+          </Route> 
+        </Routes>
       </BrowserRouter>
-        
-   
-    
     </>
   );
 }
