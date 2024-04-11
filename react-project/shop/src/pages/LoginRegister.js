@@ -1,49 +1,41 @@
 import axios from 'axios'
 import React, { useRef,useState } from 'react'
+import Register from './Register'
+import { useNavigate } from 'react-router-dom';
 
 const LoginRegister = () => {
-       
-    const name = useRef('')
-    const email = useRef('')
-    const password = useRef('')
-    let [nameError, setnameError] = useState(false)
-    let [emailError, setemailError] = useState(false)
-    let [passwordError, setpasswordError] = useState(false)
-  
 
-    const submitRegister = (e) => { 
-          e.preventDefault()
+  const navigate = useNavigate()
+  const [RegisterData, setRegisterdata] = useState({name:'',email:'',password:''})
+  const [regiError, setregisError] = useState({})
 
-     
-        var re = /\S+@\S+\.\S+/;
-       
-        if (name.current.value == '') {
-            setnameError(true)
-        } else { 
-               setnameError(false)
-        }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  const regiOnchange = (e) => { 
+    setRegisterdata({ ...RegisterData , [e.target.name]:e.target.value })
+  }
+  const submitRegister = (e) => {
+            e.preventDefault()
 
-        if (email.current.value == '' || re.test(email.current.value) == false) {
-            setemailError(true)
-           
-        } else { 
-            setemailError(false)
-        }
+    let validationErorror = {}
 
-        if (password.current.value == '') {
-            setpasswordError(true)
-        } else { 
-            setpasswordError(false)
-        }
-
-        if (nameError == false && emailError == false && passwordError == false) { 
-            alert('errropr')
-            // axios.post(`http://localhost:8000/user`, { name: name.current.value, email: email.current.value, password: password.current.value }).then((res) => { 
-            //    alert('submited sussfuli')
-            // })          
-        }
+    if (RegisterData.name == '') { 
+      validationErorror.name = 'please add valid name'
+      
     }
 
+    setregisError(validationErorror)
+    if (Object.keys(validationErorror).length == 0) {
+      alert('submit succes')
+         navigate('/reg');
+    }
+   }
   return (
       <>
         <main>
@@ -96,25 +88,26 @@ const LoginRegister = () => {
           <div class="register-form">
             <form onSubmit={submitRegister} name="register-form" class="needs-validation" novalidate>
               <div class="form-floating mb-3">
-                <input name="name" type="text" ref={name} class="form-control form-control_gray" id="customerNameRegisterInput" placeholder="Username"  />
-                                      <label for="customerNameRegisterInput">Username</label>
-                                      <span style={{ color: 'red' }}>{ nameError?'please enter name':''  }</span>
+                <input name="name" onChange={regiOnchange} type="text"  class="form-control form-control_gray" id="customerNameRegisterInput" placeholder="Username"  />
+                    <label for="customerNameRegisterInput">Username</label>
+                    {regiError.name && (<span> { regiError.name }</span>) }
+                                    
               </div>
     
               <div class="pb-3"></div>
 
               <div class="form-floating mb-3">
-                <input name="email" ref={email} type="email" class="form-control form-control_gray" id="customerEmailRegisterInput" placeholder="Email address *"  />
+                <input name="email"  type="email"  onChange={regiOnchange}  class="form-control form-control_gray" id="customerEmailRegisterInput" placeholder="Email address *"  />
                                       <label for="customerEmailRegisterInput">Email address *</label>
-                                          <span style={{ color: 'red' }}>{ emailError?'please enter valid mail':''  }</span>
+                                      
               </div>
     
               <div class="pb-3"></div>
     
               <div class="form-floating mb-3">
-                <input name="password" ref={password} type="password" class="form-control form-control_gray" id="customerPasswodRegisterInput" placeholder="Password *"  />
+                <input name="password"  onChange={regiOnchange} type="password" class="form-control form-control_gray" id="customerPasswodRegisterInput" placeholder="Password *"  />
                                       <label for="customerPasswodRegisterInput">Password *</label>
-                                          <span style={{ color: 'red' }}>{ passwordError?'please enter valid password':''  }</span>
+                                      
               </div>
     
               <div class="d-flex align-items-center mb-3 pb-2">
