@@ -13,11 +13,14 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/admin' element={<Admin />}>
+         
+             <Route path='/admin' element={<Admin />}>
+         
 
           </Route>
           <Route path='/' element={<Home />}>
             {/* change on change outlet */}
+
             <Route path='/' element={<Shop />}></Route>
              <Route path='/login' element={<LoginRegister />}></Route>
             

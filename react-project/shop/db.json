@@ -1,24 +1,10 @@
 {
   "user": [
     {
-      "id": "2948",
-      "name": "bhadresh b",
-      "email": "bhadreshce17@gmail.com",
-      "password": "1221221",
-      "isadmin": false
-    },
-    {
-      "id": "654f",
-      "name": "bhadresh b",
-      "email": "bhadreshce17@gmail.com",
-      "password": "aqsasa",
-      "isadmin": false
-    },
-    {
-      "id": "334f",
-      "name": "bhadresh b",
-      "email": "bhadreshce17@gmail.com",
-      "password": "aqsasa",
+      "id": "3c59",
+      "name": "bhadresh",
+      "email": "bhadresh@gmail.com",
+      "password": "123",
       "isadmin": true
     }
   ]
