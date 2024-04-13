@@ -6,6 +6,34 @@
       "email": "bhadresh@gmail.com",
       "password": "123",
       "isadmin": true
+    },
+    {
+      "id": "b7e0",
+      "name": "bhadresh b",
+      "email": "mohn@gmail.com",
+      "password": "wqwww",
+      "isadmin": false
+    },
+    {
+      "id": "dee7",
+      "name": "bhadresh b",
+      "email": "mohn@gmail.com",
+      "password": "122",
+      "isadmin": false
+    },
+    {
+      "id": "a5c3",
+      "name": "bhadresh b",
+      "email": "bh1adreshce17@gmail.com",
+      "password": "123",
+      "isadmin": true
+    },
+    {
+      "id": "8bfc",
+      "name": "bhadresh b",
+      "email": "mohn@gmail.com",
+      "password": "123",
+      "isadmin": false
     }
   ]
 }

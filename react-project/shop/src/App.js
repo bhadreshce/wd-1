@@ -8,16 +8,23 @@ import Home from './user/Home';
 import Admin from './admin/Admin';
 import Shop from './pages/Shop';
 import LoginRegister from './pages/LoginRegister';
+import Dashboard from './admin/Dashboard';
+import Category from './admin/Category';
+import Product from './admin/Product';
+import { PrivateRouter } from './PrivateRoutes';
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-         
-             <Route path='/admin' element={<Admin />}>
-         
-
+          <Route element={<PrivateRouter/> }>
+            <Route path='/admin' element={<Admin />}>
+              <Route path='/admin/dashboard' element={<Dashboard />}></Route>
+              <Route path='/admin/category' element={<Category />}></Route>
+              <Route path='/admin/product' element={<Product />}></Route>
           </Route>
+          </Route>
+         
           <Route path='/' element={<Home />}>
             {/* change on change outlet */}
 

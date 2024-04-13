@@ -49,7 +49,26 @@ const LoginRegister = () => {
         console.log(logindata.data[0]);
 
         if (logindata.data[0].password == loginData.password) {
-            
+
+          localStorage.setItem('user', logindata.data[0].name)
+          localStorage.setItem('admin', logindata.data[0].isadmin)
+            toast.success('login susseccfully', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        });
+          if (logindata.data[0].isadmin) {
+            navigate('/admin')
+
+          } else {
+            navigate('/')
+          }
         } else {
           setLoginError({ password: 'pleasse enete valid password' })
         }

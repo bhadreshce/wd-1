@@ -1,7 +1,7 @@
 import { Outlet, Navigate } from "react-router-dom";
 export const PrivateRouter = () => { 
-    const auth = 'private'
+    const auth =localStorage.getItem('admin')
     return (
-        auth == 'dew' ? <Outlet /> : <Navigate to={'/login'} />
+        auth == 'true' ? <Outlet /> : <Navigate to={'/login'} />
      )
 }
