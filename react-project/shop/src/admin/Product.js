@@ -1,8 +1,14 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Product = () => {
   return (
-    <div>Product</div>
+    <>
+    <br />
+      <br />
+      <Link to={'/admin/product/add'} class="btn btn-primary">Add Product</Link>
+      <br />
+      <br />
+    </>
   )
 }
 

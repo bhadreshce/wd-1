@@ -1,39 +1,22 @@
 {
   "user": [
     {
-      "id": "3c59",
-      "name": "bhadresh",
-      "email": "bhadresh@gmail.com",
-      "password": "123",
-      "isadmin": true
-    },
-    {
-      "id": "b7e0",
-      "name": "bhadresh b",
-      "email": "mohn@gmail.com",
-      "password": "wqwww",
-      "isadmin": false
-    },
-    {
-      "id": "dee7",
-      "name": "bhadresh b",
-      "email": "mohn@gmail.com",
-      "password": "122",
-      "isadmin": false
-    },
-    {
-      "id": "a5c3",
+      "id": "8ecc",
       "name": "bhadresh b",
       "email": "bh1adreshce17@gmail.com",
       "password": "123",
       "isadmin": true
-    },
+    }
+  ],
+  "category": [],
+  "product": [
     {
-      "id": "8bfc",
-      "name": "bhadresh b",
-      "email": "mohn@gmail.com",
-      "password": "123",
-      "isadmin": false
+      "id": "4d5f",
+      "productName": "Banarasi Saree",
+      "productPrice": "11",
+      "productQuantity": "211",
+      "productCategory": "Furnifute",
+      "productUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR33LMYMSREW2r01j94XAeSoyl9shrNptxAorPLgu1WwZB-XB276QY3_jwThwFWbIVJVGVPt3iJ1I6O7qQcc7jXx-9RX5WZNeo8f5xDuBp-uNmL7GktkN_SVg"
     }
   ]
 }

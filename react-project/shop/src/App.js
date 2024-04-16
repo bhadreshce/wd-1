@@ -2,8 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './user/Header';
 import Footer from './user/Footer';
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './user/Home';
 import Admin from './admin/Admin';
 import Shop from './pages/Shop';
@@ -12,6 +10,9 @@ import Dashboard from './admin/Dashboard';
 import Category from './admin/Category';
 import Product from './admin/Product';
 import { PrivateRouter } from './PrivateRoutes';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AddCat from './admin/AddCat';
+import AddProduct from './admin/AddProduct';
 function App() {
   return (
     <>
@@ -22,6 +23,9 @@ function App() {
               <Route path='/admin/dashboard' element={<Dashboard />}></Route>
               <Route path='/admin/category' element={<Category />}></Route>
               <Route path='/admin/product' element={<Product />}></Route>
+              <Route path='/admin/category/add' element={<AddCat />}></Route>
+              <Route path='/admin/product/add' element={<AddProduct />}></Route>
+
           </Route>
           </Route>
          
