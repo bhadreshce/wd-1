@@ -8,15 +8,28 @@
       "isadmin": true
     }
   ],
-  "category": [],
+  "category": [
+    {
+      "id": "6d41",
+      "name": "Sarees"
+    },
+    {
+      "id": "27a0",
+      "name": "Furnifute"
+    },
+    {
+      "id": "0ae4",
+      "name": "Clothe"
+    }
+  ],
   "product": [
     {
-      "id": "4d5f",
-      "productName": "Banarasi Saree",
-      "productPrice": "11",
-      "productQuantity": "211",
+      "id": "c3c8",
+      "productName": "Banarasi Saree123",
+      "productPrice": "12123",
+      "productQuantity": "21123",
       "productCategory": "Furnifute",
-      "productUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR33LMYMSREW2r01j94XAeSoyl9shrNptxAorPLgu1WwZB-XB276QY3_jwThwFWbIVJVGVPt3iJ1I6O7qQcc7jXx-9RX5WZNeo8f5xDuBp-uNmL7GktkN_SVg"
+      "productUrl": "https://assets.ajio.com/medias/sys_master/root/20230822/CL2k/64e470abddf77915195e80ce/-473Wx593H-466303960-green-MODEL.jpg"
     }
   ]
 }

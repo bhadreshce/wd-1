@@ -13,6 +13,7 @@ import { PrivateRouter } from './PrivateRoutes';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddCat from './admin/AddCat';
 import AddProduct from './admin/AddProduct';
+import EditProduct from './admin/EditProduct';
 function App() {
   return (
     <>
@@ -25,7 +26,7 @@ function App() {
               <Route path='/admin/product' element={<Product />}></Route>
               <Route path='/admin/category/add' element={<AddCat />}></Route>
               <Route path='/admin/product/add' element={<AddProduct />}></Route>
-
+                <Route path='/admin/product/edit/:id' element={<EditProduct />}></Route>
           </Route>
           </Route>
          
