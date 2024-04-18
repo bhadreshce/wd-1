@@ -14,6 +14,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddCat from './admin/AddCat';
 import AddProduct from './admin/AddProduct';
 import EditProduct from './admin/EditProduct';
+import {Category as Cat }  from './user/Category';
 function App() {
   return (
     <>
@@ -34,7 +35,8 @@ function App() {
             {/* change on change outlet */}
 
             <Route path='/' element={<Shop />}></Route>
-             <Route path='/login' element={<LoginRegister />}></Route>
+            <Route path='/category/:id' element={<Cat />}></Route>
+            <Route path='/login' element={<LoginRegister />}></Route>
             
           </Route> 
         </Routes>

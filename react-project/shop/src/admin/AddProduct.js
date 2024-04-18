@@ -90,7 +90,8 @@ const AddProduct = () => {
             className="form-control"
             id="productCategory"
              onChange={productSet}
-                      >
+            >
+              <option value="">Select Category</option> 
                           {cat.map((res) => { 
                               return (
                                   <option value={res.name}>{res.name}</option> 
