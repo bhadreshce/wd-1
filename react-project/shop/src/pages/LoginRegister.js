@@ -51,6 +51,7 @@ const LoginRegister = () => {
         if (logindata.data[0].password == loginData.password) {
 
           localStorage.setItem('user', logindata.data[0].name)
+            localStorage.setItem('userid', logindata.data[0].id)
           localStorage.setItem('admin', logindata.data[0].isadmin)
             toast.success('login susseccfully', {
           position: "top-right",

@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useSelector } from 'react-redux';
+
 const Header = () => {
   const [cat, setCat] = useState([])
+
+  const cart = useSelector((result) => { 
+      return result.cart.count;
+  })
   useEffect(() => { 
     axios.get(`http://localhost:8000/category`).then((result) => { 
         setCat(result.data)
@@ -122,7 +128,7 @@ const Header = () => {
 
           <a href="#" class="header-tools__item header-tools__cart js-open-aside" data-aside="cartDrawer">
             <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_cart" /></svg>
-            <span class="cart-amount d-block position-absolute js-cart-items-count">3</span>
+                <span class="cart-amount d-block position-absolute js-cart-items-count">{cart }</span>
           </a>
 
          

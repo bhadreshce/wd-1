@@ -6,6 +6,13 @@
       "email": "bh1adreshce17@gmail.com",
       "password": "123",
       "isadmin": true
+    },
+    {
+      "id": "2551",
+      "name": "bhadresh b",
+      "email": "mohn@gmail.com",
+      "password": "123",
+      "isadmin": false
     }
   ],
   "category": [
@@ -38,6 +45,14 @@
       "productQuantity": "12",
       "productCategory": "Sarees",
       "productUrl": "https://assets.ajio.com/medias/sys_master/root/20230822/CL2k/64e470abddf77915195e80ce/-473Wx593H-466303960-green-MODEL.jpg"
+    }
+  ],
+  "cart": [
+    {
+      "id": "79c5",
+      "pid": "1b75",
+      "uid": "2551",
+      "quntity": 1
     }
   ]
 }

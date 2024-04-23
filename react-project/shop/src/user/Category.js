@@ -1,10 +1,18 @@
 import React, { useEffect,useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addToCart } from './../cartSlice';
+
+
 export const Category = () => {
+
     const [products, setProducts] = useState([])
       const [catName, setCatName] = useState('')
-    const { id } = useParams();
+  const { id } = useParams();
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
     useEffect(() => { 
         axios.get(`http://localhost:8000/category?id=${id}`).then((result) => { 
             setCatName(result.data[0].name)
@@ -13,7 +21,49 @@ export const Category = () => {
                setProducts(res.data)
             })
         })
-    },[])
+    }, [])
+  
+  
+  
+  
+  const addcartdata = (pid) => { 
+    console.log(pid);
+
+    let uid = localStorage.getItem('userid');
+    if (uid) {
+      axios.get(`http://localhost:8000/cart?uid=${uid}`).then((result) => { 
+       
+        
+        if (result.data.length != 0) {
+          let cartdata = result.data.filter((result) => {
+            return result.pid == pid
+          })
+         
+          if (cartdata.length != 0) {
+
+          } else {
+            axios.post(`http://localhost:8000/cart`, { pid: pid, uid: uid, quntity: 1 }).then((re) => {
+              dispatch(addToCart(1))
+              
+          
+                 
+            })
+          }
+
+        } else { 
+            axios.post(`http://localhost:8000/cart`, { pid: pid, uid: uid, quntity: 1 }).then((re) => {
+               dispatch(addToCart(1))
+              
+          
+                 
+          })
+        }
+      })
+    } else { 
+      navigate('/login')
+    }
+    
+  }
   return (
       <div>
                <main style={{paddingTop: '90px'}}>
@@ -84,13 +134,15 @@ export const Category = () => {
                       <span className="pc__img-prev" tabIndex={0} role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-9c04fbfc301f4436"><svg width={7} height={11} viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_sm" /></svg></span>
                       <span className="pc__img-next" tabIndex={0} role="button" aria-label="Next slide" aria-controls="swiper-wrapper-9c04fbfc301f4436"><svg width={7} height={11} viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></span>
                       <span className="swiper-notification" aria-live="assertive" aria-atomic="true" /></div>
-                    <button className="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                                  <button className="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart" onClick={() => { 
+                                    addcartdata(result.id)
+                                  }}> Add To Cart</button>
                   </div>
                   <div className="pc__info position-relative">
-                    <p className="pc__category">Dresses</p>
-                    <h6 className="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
+                                  <p className="pc__category">{ result.productCategory}</p>
+                                  <h6 className="pc__title"><Link to={`/product/${result.id}`}>{result.productName }</Link></h6>
                     <div className="product-card__price d-flex">
-                      <span className="money price">$29</span>
+                      <span className="money price">${result.productPrice}</span>
                     </div>
                     <div className="product-card__review d-flex align-items-center">
                       <div className="reviews-group d-flex">
