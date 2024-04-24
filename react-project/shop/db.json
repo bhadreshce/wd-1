@@ -13,6 +13,20 @@
       "email": "mohn@gmail.com",
       "password": "123",
       "isadmin": false
+    },
+    {
+      "id": "41cf",
+      "name": "bhadresh b",
+      "email": "vivek@gmail.com",
+      "password": "123",
+      "isadmin": true
+    },
+    {
+      "id": "911e",
+      "name": "bhadresh b",
+      "email": "bhadresh@gmail.com",
+      "password": "123",
+      "isadmin": false
     }
   ],
   "category": [
@@ -52,7 +66,37 @@
       "id": "79c5",
       "pid": "1b75",
       "uid": "2551",
-      "quntity": 1
+      "quntity": 21
+    },
+    {
+      "id": "648f",
+      "pid": "1ee9",
+      "uid": "2551",
+      "quntity": 30
+    },
+    {
+      "id": "70cf",
+      "pid": "5319",
+      "uid": "2551",
+      "quntity": 5
+    },
+    {
+      "id": "57d6",
+      "pid": "1b75",
+      "uid": "911e",
+      "quntity": 60
+    },
+    {
+      "id": "4114",
+      "pid": "1ee9",
+      "uid": "911e",
+      "quntity": 25
+    },
+    {
+      "id": "de42",
+      "pid": "5319",
+      "uid": "911e",
+      "quntity": 8
     }
   ]
 }

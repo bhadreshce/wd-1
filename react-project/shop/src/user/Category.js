@@ -6,13 +6,17 @@ import { addToCart } from './../cartSlice';
 
 
 export const Category = () => {
+  const [flyingBagPosition, setFlyingBagPosition] = useState(null);
 
-    const [products, setProducts] = useState([])
-      const [catName, setCatName] = useState('')
+  const [products, setProducts] = useState([])
+  const [catName, setCatName] = useState('')
   const { id } = useParams();
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  
+
+  
     useEffect(() => { 
         axios.get(`http://localhost:8000/category?id=${id}`).then((result) => { 
             setCatName(result.data[0].name)
@@ -26,11 +30,17 @@ export const Category = () => {
   
   
   
-  const addcartdata = (pid) => { 
+  const addcartdata = async(pid,e) => { 
     console.log(pid);
 
     let uid = localStorage.getItem('userid');
     if (uid) {
+      const itemPosition = e.target.getBoundingClientRect();
+      console.log(itemPosition);
+    setFlyingBagPosition({
+      top: itemPosition.top,
+      left: itemPosition.left,
+    });
       axios.get(`http://localhost:8000/cart?uid=${uid}`).then((result) => { 
        
         
@@ -40,7 +50,9 @@ export const Category = () => {
           })
          
           if (cartdata.length != 0) {
-
+            axios.patch(`http://localhost:8000/cart/${cartdata[0].id}`, { quntity: parseInt(cartdata[0].quntity + 1) }).then((result) => { 
+                    dispatch(addToCart(1))   
+            })
           } else {
             axios.post(`http://localhost:8000/cart`, { pid: pid, uid: uid, quntity: 1 }).then((re) => {
               dispatch(addToCart(1))
@@ -134,9 +146,17 @@ export const Category = () => {
                       <span className="pc__img-prev" tabIndex={0} role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-9c04fbfc301f4436"><svg width={7} height={11} viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_sm" /></svg></span>
                       <span className="pc__img-next" tabIndex={0} role="button" aria-label="Next slide" aria-controls="swiper-wrapper-9c04fbfc301f4436"><svg width={7} height={11} viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></span>
                       <span className="swiper-notification" aria-live="assertive" aria-atomic="true" /></div>
-                                  <button className="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart" onClick={() => { 
-                                    addcartdata(result.id)
+                                  <button className="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart" onClick={(event) => { 
+                                    addcartdata(result.id ,event)
                                   }}> Add To Cart</button>
+                                   {flyingBagPosition && (
+        <div
+          className="flying-bag"
+          style={{ top: flyingBagPosition.top, left: flyingBagPosition.left }}
+        >
+                                      <img src={ result.productUrl} alt="Flying bag" />
+        </div>
+      )}
                   </div>
                   <div className="pc__info position-relative">
                                   <p className="pc__category">{ result.productCategory}</p>

@@ -216,7 +216,7 @@ const ViewProduct = () => {
             className="btn btn-primary btn-addtocart"
             target="_blank"
           >
-            Buy on amazon.com
+            Add to Cart
           </a>
         </div>
       </form>

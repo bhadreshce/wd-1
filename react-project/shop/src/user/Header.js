@@ -1,17 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { useSelector } from 'react-redux';
-
+import { useSelector,useDispatch } from 'react-redux';
+import { addToCart,addToCartZero } from './../cartSlice';
 const Header = () => {
+  const dispatch = useDispatch()
   const [cat, setCat] = useState([])
 
   const cart = useSelector((result) => { 
       return result.cart.count;
-  })
+  }) 
+
+const sumOfKeyValues = (array, key) => {
+  return array.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue[key];
+  }, 0);
+};
+
   useEffect(() => { 
     axios.get(`http://localhost:8000/category`).then((result) => { 
         setCat(result.data)
+    })
+  }, [])
+
+  useEffect(() => { 
+    axios.get(`http://localhost:8000/cart?uid=${localStorage.getItem('userid')}`).then((result) => { 
+      console.log(result.data);
+      if (result.data.length === 0) {
+               dispatch(addToCartZero())
+      } else { 
+
+        const sum = sumOfKeyValues(result.data, 'quntity');
+         dispatch(addToCartZero())
+        dispatch(addToCart(sum))
+      }
+    
+
     })
   },[])
   return (

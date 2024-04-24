@@ -35,6 +35,24 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+  <style>
+    .flying-bag {
+      position: absolute;
+      animation: flyToBag 1s forwards;
+    }
+
+    @keyframes flyToBag {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.1) translate(-80%, -100%);
+      }
+    }
+  </style>
   <title>React App</title>
 </head>
 

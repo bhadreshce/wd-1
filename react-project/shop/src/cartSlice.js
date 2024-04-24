@@ -11,10 +11,13 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
      state.count = state.count + parseInt(action.payload)
     },
+     addToCartZero: (state, action) => {
+     state.count = 0
+    },
     // Add other actions like remove from cart, update cart, etc.
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart,addToCartZero } = cartSlice.actions;
 
 export default cartSlice.reducer;
