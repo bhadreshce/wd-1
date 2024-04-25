@@ -16,6 +16,8 @@ import AddProduct from './admin/AddProduct';
 import EditProduct from './admin/EditProduct';
 import {Category as Cat }  from './user/Category';
 import ViewProduct from './user/ViewProduct';
+import Cart from './user/Cart';
+import { UserPrivate } from './user/UserPrivate';
 function App() {
   return (
     <>
@@ -34,10 +36,13 @@ function App() {
          
           <Route path='/' element={<Home />}>
             {/* change on change outlet */}
-
+            <Route element={<UserPrivate />}>
+                <Route path='/cart' element={<Cart />}></Route>
+             </Route>
             <Route path='/' element={<Shop />}></Route>
             <Route path='/category/:id' element={<Cat />}></Route>
-             <Route path='/product/:id' element={<ViewProduct />}></Route>
+            <Route path='/product/:id' element={<ViewProduct />}></Route>\
+          
             <Route path='/login' element={<LoginRegister />}></Route>
             
           </Route> 
