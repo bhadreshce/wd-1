@@ -3,19 +3,29 @@ import axios from 'axios'
 
 const Cart = () => {
     const [cart, setCart] = useState([])
-      const [product, setProduct] = useState([])
-    useEffect(() => { 
-        axios.get(`http://localhost:8000/cart?uid=${localStorage.getItem('userid')}`).then((result) => { 
-            setCart(result.data)  
-           result.data.map((res) => { 
-                axios.get(`http://localhost:8000/product/${res.pid}`).then((p) => { 
-                    setProduct([...product, p.data])
-                   
-                }) 
-                return []
-            })
-        })
-    },[])
+  const [product, setProduct] = useState([])
+  const  [rerenderCart, setRender] = useState(false) 
+  useEffect(() => { 
+      
+    const fetchCartdata = async() => { 
+      const cartdata = await axios.get(`http://localhost:8000/cart?uid=${localStorage.getItem('userid')}`)
+       setCart(cartdata.data) 
+      const productRequests = cartdata.data.map(item => axios.get(`http://localhost:8000/product/${item.pid}`));
+      const productData =await Promise.all(productRequests)
+      let pDATA = productData.map((res) => res.data )
+      // console.log(pDATA);
+       setProduct(pDATA)
+          
+       
+    }
+     fetchCartdata()
+  }, [rerenderCart])
+  
+  const removeCart = (id) => { 
+    axios.delete(`http://localhost:8000/cart/${id}`).then(() => { 
+       rerenderCart ? setRender(false) : setRender(true)
+    })
+  }
   return (
       <>
       <main style={{ paddingTop: 90 }}>
@@ -80,7 +90,7 @@ const Cart = () => {
               <td>
                 <div className="shopping-cart__product-item__detail">
                   <h4>
-                    <a href="product1_simple.html">Zessi Dresses</a>
+                    <a href="product1_simple.html">{result.productName}</a>
                   </h4>
                   <ul className="shopping-cart__product-item__options">
                     <li>Color: Yellow</li>
@@ -89,7 +99,7 @@ const Cart = () => {
                 </div>
               </td>
               <td>
-                <span className="shopping-cart__product-price">$99</span>
+                                                    <span className="shopping-cart__product-price">${ result.productPrice}</span>
               </td>
               <td>
                 <div className="qty-control position-relative qty-initialized">
@@ -109,7 +119,9 @@ const Cart = () => {
                 <span className="shopping-cart__subtotal">$297</span>
               </td>
               <td>
-                <a href="#" className="remove-cart">
+                                                    <a href="#" onClick={() => { 
+                                                      removeCart(data.id)
+                                                    }} className="remove-cart">
                   <svg
                     width={10}
                     height={10}
