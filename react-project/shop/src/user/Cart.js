@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-
+import { useSelector,useDispatch } from 'react-redux';
+import { addToCart,addToCartZero,removeCart as rCart } from './../cartSlice';
 const Cart = () => {
+  const total = useSelector((data) => { 
+      return data.cart.count;
+  })
+  const dispatch = useDispatch()
     const [cart, setCart] = useState([])
   const [product, setProduct] = useState([])
-  const  [rerenderCart, setRender] = useState(false) 
+  const [rerenderCart, setRender] = useState(false) 
+  
   useEffect(() => { 
       
     const fetchCartdata = async() => { 
@@ -21,9 +27,10 @@ const Cart = () => {
      fetchCartdata()
   }, [rerenderCart])
   
-  const removeCart = (id) => { 
+  const removeCart = (id,quntity) => { 
     axios.delete(`http://localhost:8000/cart/${id}`).then(() => { 
-       rerenderCart ? setRender(false) : setRender(true)
+      setRender(!rerenderCart) 
+      dispatch(rCart(quntity))
     })
   }
   return (
@@ -71,7 +78,9 @@ const Cart = () => {
           <tbody>
                {cart.map((data) => {
                                       return (<>
-                                          { product.map((result) => { 
+                                        {product.map((result) => { 
+                                          console.log(data.quntity);
+                                          let subtotal = parseInt(data.quntity)*parseInt(result.productPrice)
                                               return (<>
                                                   { result.id == data.pid && (<tr>
               <td>
@@ -106,7 +115,7 @@ const Cart = () => {
                   <input
                     type="number"
                     name="quantity"
-                    defaultValue={3}
+                    defaultValue={data.quntity}
                     min={1}
                     className="qty-control__number text-center"
                   />
@@ -116,11 +125,11 @@ const Cart = () => {
                 {/* .qty-control */}
               </td>
               <td>
-                <span className="shopping-cart__subtotal">$297</span>
+                                                    <span className="shopping-cart__subtotal">${ subtotal }</span>
               </td>
               <td>
                                                     <a href="#" onClick={() => { 
-                                                      removeCart(data.id)
+                                                      removeCart(data.id,data.quntity)
                                                     }} className="remove-cart">
                   <svg
                     width={10}

@@ -14,10 +14,14 @@ const cartSlice = createSlice({
      addToCartZero: (state, action) => {
      state.count = 0
     },
+     
+      removeCart: (state, action) => {
+     state.count = state.count - parseInt(action.payload)
+    },
     // Add other actions like remove from cart, update cart, etc.
   },
 });
 
-export const { addToCart,addToCartZero } = cartSlice.actions;
+export const { addToCart,addToCartZero,removeCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
