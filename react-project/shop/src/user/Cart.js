@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useSelector,useDispatch } from 'react-redux';
-import { addToCart,addToCartZero,removeCart as rCart } from './../cartSlice';
+import { addToCart, addToCartZero, removeCart as rCart } from './../cartSlice';
+
 const Cart = () => {
   const total = useSelector((data) => { 
       return data.cart.count;
@@ -33,6 +34,33 @@ const Cart = () => {
       dispatch(rCart(quntity))
     })
   }
+
+    const incrementQuantity = (index) => {
+      const updatedCart = [...cart];
+      console.log(updatedCart[index]);
+      
+      updatedCart[index].quntity += 1; 
+
+          axios.patch(`http://localhost:8000/cart/${updatedCart[index].id}`, { quntity: parseInt(updatedCart[index].quntity) }).then((result) => { 
+                    dispatch(addToCart(1))   
+            })
+   
+    // Incrementing quantity
+    setCart(updatedCart);
+  };
+
+  const decrementQuantity = (index) => {
+    const updatedCart = [...cart];
+    if (updatedCart[index].quntity > 1) {
+      updatedCart[index].quntity -= 1;
+        axios.patch(`http://localhost:8000/cart/${updatedCart[index].id}`, { quntity: parseInt(updatedCart[index].quntity) }).then((result) => { 
+                    dispatch(addToCart(1))   
+            })
+      // Decrementing quantity if greater than 1
+      setCart(updatedCart);
+    }
+  };
+
   return (
       <>
       <main style={{ paddingTop: 90 }}>
@@ -76,7 +104,7 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody>
-               {cart.map((data) => {
+               {cart.map((data,index) => {
                                       return (<>
                                         {product.map((result) => { 
                                           console.log(data.quntity);
@@ -115,12 +143,12 @@ const Cart = () => {
                   <input
                     type="number"
                     name="quantity"
-                    defaultValue={data.quntity}
+                    value={data.quntity}
                     min={1}
                     className="qty-control__number text-center"
                   />
-                  <div className="qty-control__reduce">-</div>
-                  <div className="qty-control__increase">+</div>
+                  <div className="qty-control__reduce" onClick={() => decrementQuantity(index)}>-</div>
+                  <div className="qty-control__increase"  onClick={() => incrementQuantity(index)} >+</div>
                 </div>
                 {/* .qty-control */}
               </td>

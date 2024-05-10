@@ -35,12 +35,7 @@ export const Category = () => {
 
     let uid = localStorage.getItem('userid');
     if (uid) {
-      const itemPosition = e.target.getBoundingClientRect();
-      console.log(itemPosition);
-    setFlyingBagPosition({
-      top: itemPosition.top,
-      left: itemPosition.left,
-    });
+   
       axios.get(`http://localhost:8000/cart?uid=${uid}`).then((result) => { 
        
         

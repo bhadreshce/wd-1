@@ -27,6 +27,13 @@
       "email": "bhadresh@gmail.com",
       "password": "123",
       "isadmin": false
+    },
+    {
+      "id": "7746",
+      "name": "bhadresh",
+      "email": "bbb@GMAIL.COM",
+      "password": "123",
+      "isadmin": false
     }
   ],
   "category": [
@@ -79,6 +86,30 @@
       "pid": "5319",
       "uid": "911e",
       "quntity": 31
+    },
+    {
+      "id": "d43d",
+      "pid": "1b75",
+      "uid": "7746",
+      "quntity": 1
+    },
+    {
+      "id": "5816",
+      "pid": "1ee9",
+      "uid": "7746",
+      "quntity": 1
+    },
+    {
+      "id": "e678",
+      "pid": "5319",
+      "uid": "7746",
+      "quntity": 1
+    },
+    {
+      "id": "3761",
+      "pid": "1b75",
+      "uid": "2551",
+      "quntity": 17
     }
   ]
 }
